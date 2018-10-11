@@ -26,6 +26,11 @@ SECRET_KEY = 'p322garm$c$ovd26ze!jq#iud&+l#sap0y&dz(iyw^k+mlkt-p'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+<<<<<<< HEAD
+=======
+    'ambors11.pythonanywhere.com',
+
+>>>>>>> 96e9d40b0fd6b5f09987cc4afc07e9fe2708a12e
     ]
 
 

@@ -13,9 +13,13 @@
         {% if user.is_authenticated %}
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+<<<<<<< HEAD
 	<hr>
 	<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
 {% for comment in post.comments.all %}
@@ -35,4 +39,6 @@
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
+=======
+>>>>>>> 96e9d40b0fd6b5f09987cc4afc07e9fe2708a12e
 {% endblock %}

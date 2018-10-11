@@ -28,7 +28,11 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+<<<<<<< HEAD
 @login_required
+=======
+
+>>>>>>> 96e9d40b0fd6b5f09987cc4afc07e9fe2708a12e
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -36,11 +40,16 @@ def post_edit(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+<<<<<<< HEAD
  
+=======
+            post.published_date = timezone.now()
+>>>>>>> 96e9d40b0fd6b5f09987cc4afc07e9fe2708a12e
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
+<<<<<<< HEAD
     return render(request, 'blog/post_edit.html', {'form': form})
 @login_required
 def post_draft_list(request):
@@ -82,3 +91,6 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+=======
+    return render(request, 'blog/post_edit.html', {'form': form})
+>>>>>>> 96e9d40b0fd6b5f09987cc4afc07e9fe2708a12e
